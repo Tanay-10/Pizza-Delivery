@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Mama Mia</string>
+    <string name="close_nav_drawer">drawer_close</string>
+    <string name="open_nav_drawer">drawer_open</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+
+</resources>

@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OrderActivity">
+
+        <include
+            android:id="@+id/toolbar1"
+            layout="@layout/toolbar"/>
+
+<!--    <androidx.appcompat.widget.Toolbar-->
+<!--        android:id="@+id/order_toolbar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="?attr/actionBarSize"-->
+<!--        android:background="@color/toolbarColor"-->
+<!--        android:elevation="10dp"-->
+<!--        app:titleTextAppearance="@style/titleText"-->
+<!--        app:titleTextColor="@color/white" />-->
+
+    <TextView
+        android:id="@+id/sub_header1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar1"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/futuraheavy"
+        android:text="Choose the type of crust"
+        android:textAlignment="center"
+        android:textColor="@color/myRed"
+        android:textSize="27sp" />
+
+    <RadioGroup
+        android:id="@+id/mainRadioGrp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sub_header1"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:outlineSpotShadowColor="@color/myColor"
+        android:paddingTop="20dp">
+
+        <RadioButton
+            android:id="@+id/radio1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/futurabook"
+            android:onClick="checkRadioButton"
+            android:text="Wheat Thin"
+            android:textColor="@color/myRed"
+            android:textSize="17sp" />
+
+        <RadioButton
+            android:id="@+id/radio2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/futurabook"
+            android:onClick="checkRadioButton"
+            android:text="Hand Tossed"
+            android:textColor="@color/myRed"
+            android:textSize="17sp" />
+
+        <RadioButton
+            android:id="@+id/radio3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/futurabook"
+            android:onClick="checkRadioButton"
+            android:text="Cheese Burst"
+            android:textColor="@color/myRed"
+            android:textSize="17sp" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/sub_header2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mainRadioGrp"
+        android:fontFamily="@font/futuramedium"
+        android:paddingTop="10dp"
+        android:text="Choose toppings"
+        android:textAlignment="center"
+        android:textColor="@color/myRed"
+        android:textSize="27sp" />
+
+
+    <LinearLayout
+        android:id="@+id/toppings"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_below="@id/sub_header2"
+        android:layout_margin="10dp"
+        android:orientation="horizontal"
+        android:weightSum="100">
+
+        <ScrollView
+            android:id="@+id/scrollView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="50"
+            android:fillViewport="false"
+            android:scrollbarSize="8dp"
+            android:scrollbarStyle="outsideOverlay"
+            android:fadeScrollbars="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/checkbox1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/sub_header2"
+                    android:layout_marginStart="35dp"
+                    android:fontFamily="@font/futurabook"
+                    android:onClick="checkBoxFunction"
+                    android:text="Extra cheese"
+                    android:textColor="@color/myRed"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/checkbox2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/checkbox1"
+                    android:layout_marginStart="35dp"
+                    android:fontFamily="@font/futurabook"
+                    android:onClick="checkBoxFunction"
+                    android:text="Tomato"
+                    android:textColor="@color/myRed"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/checkbox3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/checkbox2"
+                    android:layout_marginStart="35dp"
+                    android:fontFamily="@font/futurabook"
+                    android:onClick="checkBoxFunction"
+                    android:text="Capsicum"
+                    android:textColor="@color/myRed"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/checkbox4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/checkbox3"
+                    android:layout_marginStart="35dp"
+                    android:fontFamily="@font/futurabook"
+                    android:onClick="checkBoxFunction"
+                    android:text="Paneer"
+                    android:textColor="@color/myRed"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/checkbox5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/sub_header2"
+                    android:layout_marginStart="35dp"
+                    android:fontFamily="@font/futurabook"
+                    android:onClick="checkBoxFunction"
+                    android:text="Pepperoni"
+                    android:textColor="@color/myRed"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/checkbox6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/sub_header2"
+                    android:layout_marginStart="35dp"
+                    android:fontFamily="@font/futurabook"
+                    android:onClick="checkBoxFunction"
+                    android:text="Fresh garlic"
+                    android:textColor="@color/myRed"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/checkbox7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/sub_header2"
+                    android:layout_marginStart="35dp"
+                    android:fontFamily="@font/futurabook"
+                    android:onClick="checkBoxFunction"
+                    android:text="Basil"
+                    android:textColor="@color/myRed"
+                    android:textSize="20sp" />
+            </LinearLayout>
+        </ScrollView>
+
+        <ScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="50"
+            android:fillViewport="false"
+            android:scrollbars="vertical"
+            android:scrollbarSize="8dp"
+            android:scrollbarStyle="outsideOverlay"
+            android:fadeScrollbars="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/checkbox8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="35dp"
+                    android:fontFamily="@font/futurabook"
+                    android:onClick="checkBoxFunction"
+                    android:text="Onion"
+                    android:textColor="@color/myRed"
+                    android:textSize="20sp" />
+
+
+                <CheckBox
+                    android:id="@+id/checkbox9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/checkbox5"
+                    android:layout_marginStart="35dp"
+                    android:fontFamily="@font/futurabook"
+                    android:onClick="checkBoxFunction"
+                    android:text="Corn"
+                    android:textColor="@color/myRed"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/checkbox10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/checkbox6"
+                    android:layout_marginStart="35dp"
+                    android:fontFamily="@font/futurabook"
+                    android:onClick="checkBoxFunction"
+                    android:text="Chilly"
+                    android:textColor="@color/myRed"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/checkbox11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="35dp"
+                    android:fontFamily="@font/futurabook"
+                    android:onClick="checkBoxFunction"
+                    android:text="Mushroom"
+                    android:textColor="@color/myRed"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/checkbox12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/sub_header2"
+                    android:layout_marginStart="35dp"
+                    android:fontFamily="@font/futurabook"
+                    android:onClick="checkBoxFunction"
+                    android:text="Green pepper"
+                    android:textColor="@color/myRed"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/checkbox13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/sub_header2"
+                    android:layout_marginStart="35dp"
+                    android:fontFamily="@font/futurabook"
+                    android:onClick="checkBoxFunction"
+                    android:text="Black olives"
+                    android:textColor="@color/myRed"
+                    android:textSize="20sp" />
+
+                <CheckBox
+                    android:id="@+id/checkbox14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/sub_header2"
+                    android:layout_marginStart="35dp"
+                    android:fontFamily="@font/futurabook"
+                    android:onClick="checkBoxFunction"
+                    android:text="Sausage"
+                    android:textColor="@color/myRed"
+                    android:textSize="20sp" />
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/userInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toppings"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="15dp"
+        android:hint="Enter your Address"
+        android:minHeight="48dp"
+        android:textAlignment="center"
+        android:textColor="@color/myRed"
+        android:textColorHint="@color/myText" />
+
+
+    <Button
+        android:id="@+id/place_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/userInput"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:padding="15dp"
+        android:text="Place Order"
+        android:theme="@style/myButton" />
+
+</RelativeLayout>
